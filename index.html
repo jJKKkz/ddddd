@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Квест для мамы</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #fef9e7;
+        }
+        h1 {
+            color: #d35400;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .question label {
+            font-size: 18px;
+            color: #34495e;
+        }
+        select {
+            padding: 5px;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Квест для любимой мамы</h1>
+    <p>Соедини каждого с его привычкой:</p>
+    <div class="question">
+        <label for="habit1">Алишер:</label>
+        <select id="habit1">
+            <option value="">Выбери привычку</option>
+            <option value="спорт">Идет на спорт</option>
+            <option value="сон">Спит почти всегда</option>
+            <option value="игра">Играет в PS</option>
+            <option value="работа">Усердно работает</option>
+            <option value="стол">Залезает на стол в кухне</option>
+        </select>
+    </div>
+    <div class="question">
+        <label for="habit2">Аяжан:</label>
+        <select id="habit2">
+            <option value="">Выбери привычку</option>
+            <option value="спорт">Идет на спорт</option>
+            <option value="сон">Спит почти всегда</option>
+            <option value="игра">Играет в PS</option>
+            <option value="работа">Усердно работает</option>
+            <option value="стол">Залезает на стол в кухне</option>
+        </select>
+    </div>
+    <div class="question">
+        <label for="habit3">Амир:</label>
+        <select id="habit3">
+            <option value="">Выбери привычку</option>
+            <option value="спорт">Идет на спорт</option>
+            <option value="сон">Спит почти всегда</option>
+            <option value="игра">Играет в PS</option>
+            <option value="работа">Усердно работает</option>
+            <option value="стол">Залезает на стол в кухне</option>
+        </select>
+    </div>
+    <div class="question">
+        <label for="habit4">Айлин:</label>
+        <select id="habit4">
+            <option value="">Выбери привычку</option>
+            <option value="спорт">Идет на спорт</option>
+            <option value="сон">Спит почти всегда</option>
+            <option value="игра">Играет в PS</option>
+            <option value="работа">Усердно работает</option>
+            <option value="стол">Залезает на стол в кухне</option>
+        </select>
+    </div>
+    <div class="question">
+        <label for="habit5">Ермек:</label>
+        <select id="habit5">
+            <option value="">Выбери привычку</option>
+            <option value="спорт">Идет на спорт</option>
+            <option value="сон">Спит почти всегда</option>
+            <option value="игра">Играет в PS</option>
+            <option value="работа">Усердно работает</option>
+            <option value="стол">Залезает на стол в кухне</option>
+        </select>
+    </div>
+    <button onclick="checkAnswers()">Проверить ответы</button>
+
+    <script>
+        function checkAnswers() {
+            const answers = {
+                habit1: "спорт", // Алишер
+                habit2: "сон",   // Аяжан
+                habit3: "игра",  // Амир
+                habit4: "стол",  // Айлин
+                habit5: "работа" // Ермек
+            };
+
+            const userAnswers = {
+                habit1: document.getElementById('habit1').value,
+                habit2: document.getElementById('habit2').value,
+                habit3: document.getElementById('habit3').value,
+                habit4: document.getElementById('habit4').value,
+                habit5: document.getElementById('habit5').value,
+            };
+
+            let correct = true;
+            for (let key in answers) {
+                if (answers[key] !== userAnswers[key]) {
+                    correct = false;
+                    break;
+                }
+            }
+
+            if (correct) {
+                window.location.href = "congratulations.html";
+            } else {
+                alert('Попробуй еще раз!');
+            }
+        }
+    </script>
+</body>
+</html>
